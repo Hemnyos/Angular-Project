@@ -1,0 +1,42 @@
+<!-- src/app/disney/page/dysney-page/dysney-page.component.html -->
+<!-- La condition permet d'afficher le reste seulement si le dysney data est rempli -->
+<section *ngIf="disneyData">
+    <h1>Les Favoris</h1>
+    <div class="content" >
+        <!-- Parcour les données récupérées via L'API -->
+        <div *ngFor="let personnage of personnagesFavoris; let i = index">
+            <h3>{{personnage.name}}</h3>
+                <button (click)="removePersonnage(personnage)">
+                    Remove ❌
+                </button>
+            <!-- Utilise l'image donnée par l'api -->
+            <img [src]="personnage.imageUrl" alt="img" class="imgChiante">
+            
+        </div>
+
+    </div>
+    
+</section>
+<section *ngIf="disneyData">
+    <h1>Les héros disney</h1>
+    <div class="content" >
+        <!-- Parcour les données récupérées via L'API -->
+        <div *ngFor="let personnage of disneyData.data; let i = index">
+            <h3>{{personnage.name}}</h3>
+            <!-- Utilise l'image donnée par l'api -->
+            <img [src]="personnage.imageUrl" alt="img" class="imgChiante">
+            
+            <!-- Regarde si le personnage est dans un film -->
+            <div *ngIf="personnage.tvShows.length" class="titreFilm">
+                Film : 
+                <span *ngFor="let movie of personnage.tvShows">{{movie}}</span>
+            </div>
+            <div class="button">
+                <button *ngIf="!isPersonnageFavoris(personnage) " (click)="addPersonnage(personnage)">Ajouter ❤️</button>
+            </div>
+
+        </div>
+    </div>
+    
+</section>
+

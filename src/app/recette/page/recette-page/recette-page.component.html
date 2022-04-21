@@ -1,0 +1,23 @@
+<section>
+    <div class="content">
+        <div class="recette">
+            <h1>Recette</h1>
+            <div *ngFor="let ligne of recette.lignes; let i = index">
+                <p id="ajout">{{ligne.quantite}}{{ligne.ingrediant.icon}}{{ligne.ingrediant.nom}}<span><button class="btn" (click)="removeLigne(ligne.ingrediant)">X</button></span></p>
+                
+                
+            </div>
+        </div>
+        <div class=" trait">
+            </div>
+            <div class="ingredients">
+                <h1>Ingrédients</h1>
+                <div *ngFor="let Ingredient of ingredients; let i = index">
+                    <p id="ajout">{{Ingredient.icon}}{{Ingredient.nom}}<button class="btn"
+                            (click)="addLigne(Ingredient)">+</button></p>
+
+
+                </div>
+            </div>
+        </div>
+</section>

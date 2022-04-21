@@ -1,0 +1,29 @@
+<!-- src/app/app.component.html -->
+<nav>
+    <ul>
+        <li>
+            <a [routerLink]="['/recette']">
+                Ta Liste d'ingrédients 🥙g
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/todo']">
+                Ta Todo Liste 🕵️‍♀️
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/disney']">
+                Tes Personnages Disney 🤡
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/compteur']">
+                Ton compteur cassé 🥳!
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Affiche un composant selon l'url, dans notre avec l'url todo on affiche le Todo-page.component -->
+
+<router-outlet></router-outlet>

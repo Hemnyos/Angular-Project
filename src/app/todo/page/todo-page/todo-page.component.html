@@ -1,0 +1,26 @@
+
+
+<section>
+    <div class="content">
+        <h1>
+            Todo List
+        </h1>
+        <hr>
+        <div>
+            <input class="form-control" type="text" [(ngModel)]="currentTodo">
+				<button class="btn btn-info" (click)="addTodo(currentTodo)">
+                    Ajouter
+                </button>
+            
+        </div>
+        <hr>
+        <div *ngFor="let todo of todos; let i = index">
+           <input id="liste" type="text" [(ngModel)]="todos[i].content" [value]="todo.content"> 
+					<button class="btn btn-info" (click)="removeTodo(i)">
+                        X
+                    </button>
+        </div>
+        <hr>
+        <button (click)="sauvegarder()">Sauvegarder</button>
+    </div>
+</section>

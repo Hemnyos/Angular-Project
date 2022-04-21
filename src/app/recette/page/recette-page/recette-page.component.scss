@@ -1,0 +1,60 @@
+
+
+section {
+    // Donne la propriété Flex
+    display: flex;
+    // Centre son contenu au millieu
+    justify-content: center;
+    padding: 30px;
+    .content {
+        // Limite la taille de la todoList 
+        width: 720px;
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .ingredients{
+
+        text-align: right;
+
+    }
+    #liste{
+
+        border: none;
+    }
+    p{
+        border: 1px dashed green;
+        border-radius: 15px;
+        color:darkblue;
+        padding-right: 8px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        
+        
+    }
+    h1{
+
+        border-bottom: 2px solid green;
+        padding-bottom: 15px;
+        padding-right: 80px;
+        padding-left: 80px;
+    }
+    .trait{
+
+        border-left: 2px solid green;
+    }
+    .btn{
+
+        background-color: lightcoral;
+        border-radius: 5px;
+        font-weight: bolder;
+        color: blue;
+    }
+    .btn:hover{
+        background-color: blueviolet;
+        color: whitesmoke;
+    }
+
+}
