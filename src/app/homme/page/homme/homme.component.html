@@ -1,0 +1,27 @@
+<!-- src/app/disney/page/dysney-page/dysney-page.component.html -->
+<!-- La condition permet d'afficher le reste seulement si le dysney data est rempli -->
+<section>
+    <div class="content">
+        <div class="recette">
+            <h1>Détruisez les Humains</h1>
+            <div class="homme" *ngFor="let ligne of Humain.lignes; let i = index">
+                <p class="ajout">{{ligne.quantite}}{{ligne.homme.icon}}{{ligne.homme.nom}}<span><button class="btn" (click)="removeLigne(ligne.humains)">x</button></span></p>
+                
+                
+            </div>
+        </div>
+        <div class=" trait">
+            </div>
+            <div class="ingredients">
+                <h1>Faites pousser les Humains</h1>
+                <div class="homme" *ngFor="let humain of Humains; let i = index">
+                    <p class="ajout">{{humain.icon}}{{humain.nom}}<button class="btn"
+                            (click)="addLigne(humain)">+</button></p>
+
+
+                </div>
+                <button class="btn" (click)="sauvegarder()">Sauvegarder</button>
+            </div>
+        </div>
+</section>
+

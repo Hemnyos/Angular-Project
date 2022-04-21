@@ -1,0 +1,8 @@
+<div class="row" *ngIf="gameService.stores">
+    <div class="col-2 mt-2" *ngFor="let store of gameService.stores">
+      <div class="bg-white btn w-100" (click)="goToStore(store.storeID)">
+        <img [src]="gameService.getStoreUrlImg(store.images.icon)" alt="icon" />
+        <span>{{ store.storeName }}</span>
+      </div>
+    </div>
+  </div>

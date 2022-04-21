@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { RecetteModule } from './recette/recette.module';
 import { TodoModule } from './todo/todo.module';
 import { DisneyModule } from './disney/disney.module';
+import { HommeModule } from './homme/homme.module';
+import { GameModule } from './game/game.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { DisneyModule } from './disney/disney.module';
     TodoModule,
     RecetteModule,
     DisneyModule,
+    HommeModule,
+    GameModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

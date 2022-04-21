@@ -6,16 +6,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { TodoPageComponent } from './todo/page/todo-page/todo-page.component';
 import { RecettePageComponent } from './recette/page/recette-page/recette-page.component';
 import { DisneyPageComponent } from './disney/page/disney-page/disney-page.component';
+import { HommeComponent } from './homme/page/homme/homme.component';
+import { GameComponent } from './game/page/game/game.component';
 import { Page404Component } from './404/page/page404/page404.component';
+
 
 const routes: Routes = [
   // Affiche le composant TodoPageComponent quand l'url est todo
   { path: 'todo', component: TodoPageComponent },
   { path: 'recette', component: RecettePageComponent },
   {path: 'disney', component: DisneyPageComponent},
+  { path: 'homme', component: HommeComponent},
+  {path: 'game', component: GameComponent},
   {path: '404', component: Page404Component},
   { path: '', component: TodoPageComponent },
   { path: '**', pathMatch: 'full', component: Page404Component },
+  
 
 ];
 

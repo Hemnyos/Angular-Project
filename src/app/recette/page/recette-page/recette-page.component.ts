@@ -36,6 +36,7 @@ export class RecettePageComponent implements OnInit {
     this.recette.lignes.splice(index, 1)
   }
   
+  
 
   
   constructor() {}

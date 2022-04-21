@@ -1,0 +1,22 @@
+.panier {
+    scroll-behavior: auto;
+}
+
+.card {
+    height: 500px;
+    transition: transform 250ms, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    .image-wrapper {
+        height: 200px;
+        overflow: hidden;
+        img {
+            height: auto;
+          
+            min-height: 100%;
+        }
+    }
+    &:hover {
+       transform: scale(1.05);
+       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+}

@@ -1,0 +1,56 @@
+<div class="row mt-5" *ngIf="gameService.deals && !gameService.inLoad">
+    <div class="navigation">
+      <div class="text">nombre total de page : {{ gameService.totalPageCount }}</div>
+      <input [(ngModel)]="titleSearch" type="text" />
+      <button class="btn" (click)="search()">Chercher</button>
+      <button class="btn" (click)="gameService.prevDealPage()">Page Précédente</button>
+      <button class="btn" (click)="gameService.nextDealPage()">Page Suivante</button>
+    </div>
+    <div *ngFor="let deal of gameService.deals" class="col-3 mt-4">
+      <div class="card">
+        <div class="image-wrapper">
+          <img [src]="deal.thumb" class="card-img-top" alt="game-thumb" />
+        </div>
+        <div class="card-body">
+          <div
+            class="store-wrapper"
+            *ngIf="gameService.getStoreById(deal.storeID)"
+          >
+            <img
+              [src]="
+                gameService.getStoreUrlImg(
+                  gameService.getStoreById(deal.storeID)?.images?.icon
+                )
+              "
+              alt="icon-store"
+            />
+  
+            {{ gameService.getStoreById(deal.storeID)?.storeName }}
+            <hr />
+          </div>
+          <h5 class="card-title">{{ deal.title }}</h5>
+          <p>
+            <s>{{ deal.normalPrice }}$</s>
+          </p>
+          <p>{{ deal.salePrice }}$</p>
+          <div class="cta-wrapper">
+            <a
+              [href]="'https://www.metacritic.com/' + deal.metacriticLink"
+              target="_blank"
+              class="btn btn-secondary me-2"
+              >👀 Critique</a
+            >
+            <button
+              (click)="basketService.addToBasket(deal)"
+              class="btn btn-primary"
+            >
+              🛒 Ajouter
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="gameService.inLoad">
+    <app-loader></app-loader>
+  </div>

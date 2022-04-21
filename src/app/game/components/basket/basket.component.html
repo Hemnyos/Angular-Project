@@ -1,0 +1,18 @@
+<h1>Panier</h1>
+<p>Nombre d'item dans le panier : {{ basketService.getTotalItemsBasket() }}</p>
+<p>
+  Prix normal du panier : <s>{{ basketService.getTotalNormalPrice() }}</s> € TTC
+</p>
+<p>Prix réduit du panier : {{ basketService.getTotalPrice() }} € TTC</p>
+<div *ngFor="let itemBasket of basketService.basket">
+  {{ itemBasket.quantite }} X
+  {{ itemBasket.deal.title }}
+  <button
+    (click)="basketService.removeToBasket(itemBasket.deal)"
+    class="btn btn-danger"
+  >
+    ❌
+  </button>
+</div>
+
+
